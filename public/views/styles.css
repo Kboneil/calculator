@@ -1,28 +1,37 @@
-#firstNum, #secondNum, #answer{
-  border: 2px solid black;
-  margin: 10px 0 10px 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
+body {
+  text-align: center;
+  color: #001a09;
+}
+#calculator {
+    border: 2px solid #004d1a;
+     border-radius: 10px;
+    width: 170px;
+    margin: auto;
+    height:210px;
+    background-color: #001a09;
 }
 form {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   margin: auto;
+}
+button{
+  height: 30px;
+  width: 30px;
+  margin: 4px 2px 4px 2px;
+  color: #001a09;
+  background-color: #ccffdd;
+  border-radius: 10px;
+
 }
 
 #answer{
-  height: 20px;
-  width: 100px;
+  text-align: right;
+  padding-right:2px;
+  border: 2px solid #001a09;
+  height: 25px;
+  width: 145px;
   margin: 10px auto 10px auto;
+  background-color: #ccffdd;
 
-}
-
-#outsideForm {
-margin-top: 10px;
-padding: 10px;
-}
-
-body {
-  text-align: center;
 }
