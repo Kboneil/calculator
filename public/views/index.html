@@ -10,16 +10,39 @@
   <body>
     <h1>Calculate!</h1>
   <form>
-    <label>Number 1:</label>
-    <input type="number" name="x"/>
-    <label>Number 2:</label>
-    <input type="number" name="y"/>
-    <button id="add" data-type="add">Add</button>
-    <button id="subtract" data-type="subtract">Subtract</button>
-    <button id="multiply" data-type="multiply">Multiply</button>
-    <button id="divide" data-type="divide">Divide</button>
-    <button id="clear">Clear</button>
+    <div id="firstNum">
+      <button type="button" class="groupOne" id="1">1</button>
+      <button type="button" class="groupOne" id="2">2</button>
+      <button type="button" class="groupOne" id="3">3</button>
+      <button type="button" class="groupOne" id="4">4</button>
+      <button type="button" class="groupOne" id="5">5</button>
+      <button type="button" class="groupOne" id="6">6</button>
+      <button type="button" class="groupOne" id="7">7</button>
+      <button type="button" class="groupOne" id="8">8</button>
+      <button type="button" class="groupOne" id="9">9</button>
+    </div>
+    <div id="operator">
+          <button type="button" class="function" id="add">+</button>
+          <button type="button" class="function" id="subtract">-</button>
+          <button type="button" class="function" id="multiply">*</button>
+          <button type="button" class="function" id="divide">/</button>
+    </div>
+    <div id="secondNum">
+      <button type="button" class="groupTwo" id="1">1</button>
+      <button type="button" class="groupTwo" id="2">2</button>
+      <button type="button" class="groupTwo" id="3">3</button>
+      <button type="button" class="groupTwo" id="4">4</button>
+      <button type="button" class="groupTwo" id="5">5</button>
+      <button type="button" class="groupTwo" id="6">6</button>
+      <button type="button" class="groupTwo" id="7">7</button>
+      <button type="button" class="groupTwo" id="8">8</button>
+      <button type="button" class="groupTwo" id="9">9</button>
+    </div>
   </form>
-  <div id="answer">Your Answer is: </div>
+    <div id="outsideForm">
+      <button id="submit">=</button>
+      <div id="answer">"     "</div>
+      <button id="clear">Clear</button>
+    </div>
   </body>
 </html>

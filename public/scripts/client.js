@@ -1,42 +1,50 @@
 $(function(){
+//creates variables for user chosen numbers and operation
+var x;
+var y;
+var type;
 
-calculate();
-
-$('form').on('click', 'button', function(event){
-  console.log('this', $(this).data('type'));
-  event.preventDefault();
-  var x = Number($('input[name="x"]').val());
-  var y = Number($('input[name="y"]').val());
-  var type = $(this).data('type');
-  console.log('one', x);
-  console.log('two', y);
+append();
+//on click the variables will change according to their id
+$('form').on('click', 'button', function (){
+  var $button = $(this);
+  if ($button.attr('class') === 'groupOne'){
+    x = $(this).attr('id');
+  }
+  if ($button.attr('class') === 'function'){
+    type = $(this).attr('id');
+  }
+  if ($button.attr('class') === 'groupTwo'){
+    y = $(this).attr('id');
+  }
+});
+//on click the data will get sent to the server
+$('#outsideForm').on('click', '#submit', function(event){
   var formData = {x: x, y: y, type: type};
-  console.log('formData', formData);
-  console.log('outside ajax');
+  event.preventDefault();
   $.ajax({
     type: 'POST',
     url: '/calculate',
     data: formData,
-    success:  calculate
+    //on success it will get appended to the DOM
+    success:  append
 });//end ajax
-  $('form').find('input[type=number]').val('');
 });//end click
 
-
-$('form').on('click', '#clear', function (){
+//on clear the box will be emptied
+$('#outsideForm').on('click', '#clear', function (){
   $('#answer').empty();
 });
 }); //end of doc ready
-
-function calculate() {
-  console.log('in the calculate function');
+//appends the DOM with the calculation result by getting it from the server
+function append() {
 $.ajax({
   type: 'GET',
   url: '/calculate',
   success: function (number){
-    console.log("number", number);
+    //clears out the old answer and replaces it with the new one
     $('#answer').empty();
-    $('#answer').text('Your answer is: ' + number);
+    $('#answer').text('     ' + number);
   }
 });
 }
